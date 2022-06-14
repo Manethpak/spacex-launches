@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { ApolloProvider } from "@apollo/client";
+import { BrowserRouter } from "react-router-dom";
+
 import "./index.css";
 import App from "./App";
-import { ApolloProvider } from "@apollo/client";
 import client from "./apollo/apollo-client";
 
 const root = ReactDOM.createRoot(
@@ -11,6 +13,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <ApolloProvider client={client}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </ApolloProvider>
 );
