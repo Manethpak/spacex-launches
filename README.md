@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# react-gql-spacex
+
+React app integrating with graphql and SpaceX open api
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
