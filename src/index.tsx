@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ApolloProvider } from "@apollo/client";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./index.css";
-import App from "./App";
 import client from "./apollo/apollo-client";
+import Home from "./pages/Home";
+import LaunchDetail from "./pages/LaunchDetail";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,7 +15,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <ApolloProvider client={client}>
     <BrowserRouter>
-      <App />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/detail/:id" element={<LaunchDetail />} />
+      </Routes>
     </BrowserRouter>
   </ApolloProvider>
 );
