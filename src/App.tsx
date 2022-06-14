@@ -1,7 +1,11 @@
 import React from "react";
 
 const App: React.FC = () => {
-  return <div>App</div>;
+  return (
+    <React.Fragment>
+      <p className="text-2xl"> hello </p>
+    </React.Fragment>
+  );
 };
 
 export default App;
