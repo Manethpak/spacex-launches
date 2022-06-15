@@ -1,0 +1,15 @@
+fragment LaunchDetail on Launch {
+  id
+  details
+  mission_name
+  launch_date_utc
+  launch_success
+  launch_site {
+    site_name
+  }
+  links {
+    flickr_images
+    video_link
+    mission_patch
+  }
+}

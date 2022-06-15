@@ -1,0 +1,16 @@
+fragment RocketDetail on LaunchRocket {
+  rocket {
+    name
+    type
+    active
+    diameter {
+      meters
+    }
+    height {
+      meters
+    }
+    mass {
+      kg
+    }
+  }
+}

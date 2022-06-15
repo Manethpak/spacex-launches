@@ -1,0 +1,8 @@
+query GetDetailLaunch($id: ID!) {
+  launch(id: $id) {
+    ...LaunchDetail
+    rocket {
+      ...RocketDetail
+    }
+  }
+}
