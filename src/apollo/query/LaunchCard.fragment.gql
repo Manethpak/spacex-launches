@@ -1,0 +1,10 @@
+fragment LaunchCard on Launch {
+  id
+  mission_name
+  details
+  launch_date_utc
+  launch_success
+  links {
+    mission_patch_small
+  }
+}
