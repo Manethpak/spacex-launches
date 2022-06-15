@@ -7,6 +7,7 @@ import {
 } from "apollo/generated/schema";
 import { ChevronDoubleDownIcon } from "@heroicons/react/outline";
 import LoadingSpinner from "components/util/LoadingSpinner";
+import ScrollToTop from "components/util/ScrollToTop";
 
 const Home: React.FC = () => {
   const [offset, setOffset] = useState(0);
@@ -95,6 +96,7 @@ const Home: React.FC = () => {
           )}
         </div>
       </section>
+      <ScrollToTop />
     </div>
   );
 };
