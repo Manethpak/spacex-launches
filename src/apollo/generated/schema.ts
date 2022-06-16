@@ -1322,7 +1322,7 @@ export type Uuid_Comparison_Exp = {
 
 export type LaunchCardFragment = { __typename?: 'Launch', id: string | null, mission_name: string | null, details: string | null, launch_date_utc: any | null, launch_success: boolean | null, links: { __typename?: 'LaunchLinks', mission_patch_small: string | null } | null };
 
-export type LaunchDetailFragment = { __typename?: 'Launch', id: string | null, details: string | null, mission_name: string | null, launch_date_utc: any | null, launch_success: boolean | null, launch_site: { __typename?: 'LaunchSite', site_name: string | null } | null, links: { __typename?: 'LaunchLinks', flickr_images: Array<string | null> | null, video_link: string | null, mission_patch: string | null } | null };
+export type LaunchDetailFragment = { __typename?: 'Launch', id: string | null, details: string | null, mission_name: string | null, launch_date_utc: any | null, launch_success: boolean | null, launch_site: { __typename?: 'LaunchSite', site_name: string | null, site_name_long: string | null } | null, links: { __typename?: 'LaunchLinks', flickr_images: Array<string | null> | null, video_link: string | null, mission_patch: string | null } | null };
 
 export type RocketDetailFragment = { __typename?: 'LaunchRocket', rocket: { __typename?: 'Rocket', name: string | null, type: string | null, active: boolean | null, diameter: { __typename?: 'Distance', meters: number | null } | null, height: { __typename?: 'Distance', meters: number | null } | null, mass: { __typename?: 'Mass', kg: number | null } | null } | null };
 
@@ -1331,7 +1331,7 @@ export type GetDetailLaunchQueryVariables = Exact<{
 }>;
 
 
-export type GetDetailLaunchQuery = { __typename?: 'Query', launch: { __typename?: 'Launch', id: string | null, details: string | null, mission_name: string | null, launch_date_utc: any | null, launch_success: boolean | null, rocket: { __typename?: 'LaunchRocket', rocket: { __typename?: 'Rocket', name: string | null, type: string | null, active: boolean | null, diameter: { __typename?: 'Distance', meters: number | null } | null, height: { __typename?: 'Distance', meters: number | null } | null, mass: { __typename?: 'Mass', kg: number | null } | null } | null } | null, launch_site: { __typename?: 'LaunchSite', site_name: string | null } | null, links: { __typename?: 'LaunchLinks', flickr_images: Array<string | null> | null, video_link: string | null, mission_patch: string | null } | null } | null };
+export type GetDetailLaunchQuery = { __typename?: 'Query', launch: { __typename?: 'Launch', id: string | null, details: string | null, mission_name: string | null, launch_date_utc: any | null, launch_success: boolean | null, rocket: { __typename?: 'LaunchRocket', rocket: { __typename?: 'Rocket', name: string | null, type: string | null, active: boolean | null, diameter: { __typename?: 'Distance', meters: number | null } | null, height: { __typename?: 'Distance', meters: number | null } | null, mass: { __typename?: 'Mass', kg: number | null } | null } | null } | null, launch_site: { __typename?: 'LaunchSite', site_name: string | null, site_name_long: string | null } | null, links: { __typename?: 'LaunchLinks', flickr_images: Array<string | null> | null, video_link: string | null, mission_patch: string | null } | null } | null };
 
 export type GetLaunchListQueryVariables = Exact<{
   offset: Scalars['Int'];
@@ -1361,6 +1361,7 @@ export const LaunchDetailFragmentDoc = gql`
   launch_success
   launch_site {
     site_name
+    site_name_long
   }
   links {
     flickr_images

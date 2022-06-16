@@ -6,6 +6,7 @@ fragment LaunchDetail on Launch {
   launch_success
   launch_site {
     site_name
+    site_name_long
   }
   links {
     flickr_images
