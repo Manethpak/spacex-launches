@@ -36,7 +36,7 @@ const LaunchCard = ({
       <div className="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
         <Link
           className="text-base font-medium text-amber-500 hover:text-amber-600"
-          to={"/detail/" + id}
+          to={"/react-gql-spacex/detail/" + id}
         >
           More info<span aria-hidden="true"> &rarr;</span>
         </Link>
