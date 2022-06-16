@@ -5,8 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./index.css";
 import client from "./apollo/apollo-client";
-import Home from "./pages/Home";
-import LaunchDetail from "./pages/LaunchDetail";
+import { Home, Error, LaunchDetail } from "./pages";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,6 +17,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detail/:id" element={<LaunchDetail />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   </ApolloProvider>
