@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import backgroundImage from "assets/image/spacex-bg.jpg";
-import LaunchCard from "components/LaunchCard";
 import {
   LaunchCardFragment,
   useGetLaunchListLazyQuery,
 } from "apollo/generated/schema";
 import { ChevronDoubleDownIcon } from "@heroicons/react/outline";
-import LoadingSpinner from "components/util/LoadingSpinner";
-import ScrollToTop from "components/util/ScrollToTop";
+import backgroundImage from "assets/image/spacex-bg.jpg";
+import { LoadingSpinner, ScrollToTop, GithubSVG } from "components/util";
+import { LaunchCard } from "components";
 
 const Home: React.FC = () => {
   const [offset, setOffset] = useState(0);
+  const [loadMore, setLoadMore] = useState(false);
   const [loadList, { data, loading, error, fetchMore }] =
     useGetLaunchListLazyQuery({
       variables: { offset },
@@ -20,15 +20,22 @@ const Home: React.FC = () => {
     loadList();
   }, [loadList]);
 
-  useEffect(() => {
-    fetchMore({
-      variables: { offset },
+  const fetchLaunches = async (value: number) => {
+    setLoadMore(true);
+    await fetchMore({
+      variables: { offset: value },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult) return prev;
         return { ...prev, ...fetchMoreResult };
       },
     });
-  }, [fetchMore, offset]);
+    setLoadMore(false);
+  };
+
+  useEffect(() => {
+    fetchLaunches(offset);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [offset]);
 
   return (
     <div className="bg-gray-200 min-h-screen">
@@ -50,9 +57,16 @@ const Home: React.FC = () => {
             SpaceX Launches
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-gray-400">
-            Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate
-            id malesuada non. Cras aliquet purus dui laoreet diam sed lacus,
-            fames. Dui, amet, nec sit pulvinar.
+            <a
+              href="https://github.com/Manethpak/react-gql-spacex"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GithubSVG className="h-10 w-10 text-gray-200 hover:text-gray-400" />
+            </a>
+            <p className="text-sm">
+              &copy; 2022 Maneth PAK. All rights reserved.
+            </p>
           </p>
         </div>
       </div>
@@ -64,7 +78,7 @@ const Home: React.FC = () => {
       >
         <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-400 lg:gap-x-8">
           {data?.launchesPast?.map((link) => (
-            <LaunchCard {...(link as LaunchCardFragment)} />
+            <LaunchCard {...(link as LaunchCardFragment)} key={link?.id} />
           ))}
         </div>
         <div className="w-full flex items-center justify-center my-10">
@@ -76,13 +90,14 @@ const Home: React.FC = () => {
           {!loading && (
             <button
               type="button"
-              className="inline-flex items-center px-4 py-3 border border-transparent shadow-sm text-lg leading-4 font-medium rounded-md text-white bg-amber-500 hover:bg-amber-600  focus:ring-4 focus:ring-amber-300"
+              className="inline-flex items-center px-4 py-3 border border-transparent shadow-sm text-lg leading-4 font-medium rounded-md text-white bg-amber-500 hover:bg-amber-600  focus:ring-4 focus:ring-amber-300 disabled:opacity-80"
+              disabled={loadMore}
               onClick={() => setOffset((prev) => prev + 9)}
             >
-              {loading ? (
+              {loadMore ? (
                 <>
-                  Loading
-                  <LoadingSpinner />
+                  Loading...
+                  <LoadingSpinner classNames="h-6 w-6 text-gray-100" />
                 </>
               ) : (
                 <>
