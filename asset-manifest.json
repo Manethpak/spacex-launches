@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-gql-spacex/static/css/main.4e71b3b5.css",
-    "main.js": "/react-gql-spacex/static/js/main.5eb56360.js",
+    "main.js": "/react-gql-spacex/static/js/main.0437f745.js",
     "static/media/error-bg.jpg": "/react-gql-spacex/static/media/error-bg.72493556609fb808e4f0.jpg",
     "static/media/spacex-bg.jpg": "/react-gql-spacex/static/media/spacex-bg.159670b16d3aaede9486.jpg",
     "index.html": "/react-gql-spacex/index.html",
     "main.4e71b3b5.css.map": "/react-gql-spacex/static/css/main.4e71b3b5.css.map",
-    "main.5eb56360.js.map": "/react-gql-spacex/static/js/main.5eb56360.js.map"
+    "main.0437f745.js.map": "/react-gql-spacex/static/js/main.0437f745.js.map"
   },
   "entrypoints": [
     "static/css/main.4e71b3b5.css",
-    "static/js/main.5eb56360.js"
+    "static/js/main.0437f745.js"
   ]
 }
