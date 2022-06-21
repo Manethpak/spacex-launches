@@ -1,48 +1,37 @@
-# react-gql-spacex
+# React - GraphQL (Apollo Client) - SpaceX API
 
-React app integrating with graphql and SpaceX open api
+## About this Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My goal for this project is to learn how GraphQL works and can be integrated with a react project. Since I have no prior experience working with Graphql, I decided to start this project with inspiration from Fireship's [GraphQL Basics - Build an app with the SpaceX API](https://www.youtube.com/watch?v=7wzR4Ig5pTI&t=788s) and Colby Fayock's [Next.js GraphQL Tutorial - Launch Dashboard with SpaceX GraphQL API & Apollo Client](https://www.youtube.com/watch?v=oxUPXhZ1t9I&t=135s).
 
-## Available Scripts
+Check live preview [here](https://manethpak.me/react-gql-spacex/).
 
-In the project directory, you can run:
+### Techstack
 
-### `yarn start`
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Apollo GraphQL](https://www.apollographql.com/)
+- [GraphQL Code Generator](https://www.graphql-code-generator.com/) with `React-Apollo Hooks` schema
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Mission
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+My mission for this project is to build a React app that will render a list of past launches by SpaceX and its respective details. Data was provided by [SpaceX GraphQL API](https://medium.com/open-graphql/launching-spacex-graphql-api-b3d7029086e0). I also use GraphQL Code Generator to generate schema and hooks which is used to provide data to each page.
 
-### `yarn test`
+## Preview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Homepage
 
-### `yarn build`
+![react-gql-spacex homepage](./image/homepage.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Detail page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![react-gql-spacex detail page](./image/detail_page.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Outcome
 
-### `yarn eject`
+After completing this project I was able to get a glimpes of what GraphQL is and how capable it is when use correctly with the right tools. I get to learn on how to write GraphQL query using Variables, Arguments and Fragments as well as its type system. GraphQL Code Generator made everything about GraphQL so easy to use with its generator that generated custom API hooks using React Query.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Beside the GraphQL stuff, I was also get to know React Query which was built into Apollo Client and is mainly use for making API request. I had never tried React Query before and to my surpires it was super easy to use and maintain data state!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Overall building this project was a really fun experience, I get to learn and challenge myself with something new once in a while.🥰s
