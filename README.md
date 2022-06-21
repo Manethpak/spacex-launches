@@ -1,4 +1,6 @@
-# React - GraphQL (Apollo Client) - SpaceX API
+# SpaceX Launches
+
+## React - GraphQL (Apollo Client) - SpaceX API
 
 ## About this Project
 
