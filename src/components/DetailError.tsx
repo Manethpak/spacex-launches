@@ -11,7 +11,10 @@ const DetailError = ({ param }: { param: string }) => {
           Looks like the page you're looking for doesn't exist.
         </p>
         <button className="bg-amber-500 rounded-lg px-4 py-2">
-          <Link to="/" className="text-white inline-flex items-center">
+          <Link
+            to="/spacex-launches"
+            className="text-white inline-flex items-center"
+          >
             <ChevronLeftIcon className="w-5 h-5" />
             <span>GO BACK</span>
           </Link>

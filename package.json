@@ -1,7 +1,7 @@
 {
   "name": "react-gql-spacex",
   "version": "0.1.0",
-  "homepage": "http://manethpak.github.io/react-gql-spacex",
+  "homepage": "http://manethpak.github.io/spacex-launches",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.6.8",
