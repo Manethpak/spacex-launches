@@ -15,11 +15,11 @@ root.render(
   <ApolloProvider client={client}>
     <BrowserRouter>
       <Routes>
-        <Route path="/react-gql-spacex">
+        <Route path="/spacex-launches">
           <Route index element={<Home />} />
           <Route path="detail/:id" element={<LaunchDetail />} />
         </Route>
-        <Route path="*" element={<Error />} />
+        <Route path="/spacex-launches/*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   </ApolloProvider>
