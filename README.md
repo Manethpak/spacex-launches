@@ -1,6 +1,6 @@
 # SpaceX Launches
 
-## React - GraphQL (Apollo Client) - SpaceX API
+A React app integrated with Apollo Client and GraphQL using the free and open SpaceX API.
 
 ## About this Project
 
