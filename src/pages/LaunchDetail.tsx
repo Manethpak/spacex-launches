@@ -46,7 +46,7 @@ const LaunchDetail: React.FC = () => {
             {data.launch.links?.video_link && (
               <iframe
                 title={data?.launch?.mission_name ?? ""}
-                className="w-full md:w-[36rem] h-[20rem] my-4 mx-auto border-none"
+                className="w-full aspect-video border-none my-4"
                 src={
                   "https://youtube.com/embed/" +
                   getYoutubeID(data.launch.links?.video_link)
@@ -72,13 +72,13 @@ const LaunchDetail: React.FC = () => {
         {/* Image gallery */}
         <hr />
         <h2 className="font-semibold text-2xl">Image Gallery</h2>
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8">
+        <div className="columns-1 md:columns-3 gap-2 md:gap-6">
           {data?.launch?.links?.flickr_images?.map((source) => {
             return (
               <img
                 src={source ?? ""}
-                alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
-                className="bg-gray-100 rounded-lg max-h-[16rem] lg:max-h-[20rem] w-auto"
+                alt={data?.launch?.mission_name ?? ""}
+                className="w-full aspect-auto rounded-lg mb-2 md:mb-6"
               />
             );
           })}
