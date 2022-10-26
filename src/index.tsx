@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <ApolloProvider client={client}>
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/spacex-launches">
           <Route index element={<Home />} />
@@ -22,7 +22,7 @@ root.render(
         </Route>
         <Route path="/spacex-launches/*" element={<Error />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
     <DarkModeToggle />
   </ApolloProvider>
 );
