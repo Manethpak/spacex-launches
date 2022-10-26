@@ -13,14 +13,14 @@ const LaunchCard = ({
   links,
 }: LaunchCardFragment) => {
   return (
-    <div className="flex flex-col bg-white rounded-2xl shadow-xl max-h-96">
+    <div className="flex flex-col bg-white dark:bg-[#181a1b] rounded-2xl shadow-xl max-h-96">
       <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
         {links?.mission_patch_small && (
           <div className="absolute top-0 w-20 h-20 p-2 inline-block bg-gray-600 rounded-xl shadow-lg transform -translate-y-1/2 bg-opacity-80">
             <img src={links.mission_patch_small} alt={mission_name ?? ""} />
           </div>
         )}
-        <h3 className="text-xl font-medium text-gray-900">
+        <h3 className="text-xl font-medium text-gray-900 dark:text-white">
           {mission_name} <SuccessBadge success={launch_success} />
         </h3>
         <p className="text-sm text-gray-500">
@@ -33,7 +33,7 @@ const LaunchCard = ({
           )}
         </p>
       </div>
-      <div className="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
+      <div className="p-6 bg-gray-50 dark:bg-[#212324] rounded-bl-2xl rounded-br-2xl md:px-8">
         <Link
           className="text-base font-medium text-amber-500 hover:text-amber-600"
           to={"/spacex-launches/detail/" + id}

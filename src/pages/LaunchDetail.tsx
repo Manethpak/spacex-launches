@@ -27,8 +27,8 @@ const LaunchDetail: React.FC = () => {
   if (!data?.launch || error) return <DetailError param={id} />;
 
   return (
-    <div className="bg-gray-200 min-h-screen">
-      <div className="max-w-2xl mx-auto py-24 px-4 grid items-center gap-y-8 gap-x-8 sm:px-6 sm:py-20 lg:max-w-7xl lg:px-8 bg-white min-h-screen">
+    <div className="bg-gray-200 dark:bg-[#25282a] min-h-screen">
+      <div className="max-w-2xl mx-auto py-24 px-4 grid items-center gap-y-8 gap-x-8 sm:px-6 sm:py-20 lg:max-w-7xl lg:px-8 bg-white dark:bg-[#181a1b] min-h-screen">
         <Link
           to="/spacex-launches"
           className="text-amber-500 font-semibold text-xl inline-flex items-center"
@@ -39,7 +39,7 @@ const LaunchDetail: React.FC = () => {
         {/* Mission Name, Detail, Logo */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           <article className="lg:col-span-2">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-stone-500 sm:text-4xl">
               Mission: {data?.launch?.mission_name}
             </h2>
             <p className="mt-4 text-gray-500">{data?.launch?.details}</p>
@@ -63,15 +63,21 @@ const LaunchDetail: React.FC = () => {
           )}
         </div>
         {/* Launch Information */}
-        <hr />
-        <h2 className="font-semibold text-2xl">Launch Information </h2>
+        <hr className="bg-gray-600 dark:bg-stone-500" />
+        <h2 className="font-semibold text-2xl dark:text-stone-500">
+          Launch Information{" "}
+        </h2>
         <DetailLaunchInfo {...data.launch} />
         {/* Rocket Information */}
-        <h2 className="font-semibold text-2xl">Rocket Information </h2>
+        <h2 className="font-semibold text-2xl dark:text-stone-500">
+          Rocket Information{" "}
+        </h2>
         <DetailRocketInfo {...(data.launch.rocket as RocketDetailFragment)} />
         {/* Image gallery */}
-        <hr />
-        <h2 className="font-semibold text-2xl">Image Gallery</h2>
+        <hr className="bg-gray-600 dark:bg-stone-500" />
+        <h2 className="font-semibold text-2xl dark:text-stone-500">
+          Image Gallery
+        </h2>
         <div className="columns-1 md:columns-3 gap-2 md:gap-6">
           {data?.launch?.links?.flickr_images?.map((source) => {
             return (

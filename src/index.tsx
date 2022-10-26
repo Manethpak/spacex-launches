@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ApolloProvider } from "@apollo/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 
 import "./index.css";
 import client from "./apollo/apollo-client";
 import { Home, Error, LaunchDetail } from "./pages";
+import DarkModeToggle from "components/util/DarkModeToggle";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,7 +14,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <ApolloProvider client={client}>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/spacex-launches">
           <Route index element={<Home />} />
@@ -21,6 +22,7 @@ root.render(
         </Route>
         <Route path="/spacex-launches/*" element={<Error />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
+    <DarkModeToggle />
   </ApolloProvider>
 );

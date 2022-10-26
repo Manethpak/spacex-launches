@@ -38,7 +38,7 @@ const Home: React.FC = () => {
   }, [offset]);
 
   return (
-    <div className="bg-gray-200 min-h-screen">
+    <div className="bg-gray-200 dark:bg-[#25282a] min-h-screen">
       {/* Header */}
       <div className="relative pb-32 bg-gray-800">
         <div className="absolute inset-0">
