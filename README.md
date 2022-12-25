@@ -6,7 +6,7 @@ A React app integrated with Apollo Client and GraphQL using the free and open Sp
 
 This project was created with the aim to learn how GraphQL works and how it can be integrated with a react project. Since I have no prior experience working with Graphql, I decided to start this project with inspiration from Fireship's [GraphQL Basics - Build an app with the SpaceX API](https://www.youtube.com/watch?v=7wzR4Ig5pTI&t=788s) and Colby Fayock's [Next.js GraphQL Tutorial - Launch Dashboard with SpaceX GraphQL API & Apollo Client](https://www.youtube.com/watch?v=oxUPXhZ1t9I&t=135s).
 
-Check live preview [here](https://manethpak.me/react-gql-spacex/).
+Check live preview [here](https://manethpak.me/spacex-launches/).
 
 ### Techstack
 
